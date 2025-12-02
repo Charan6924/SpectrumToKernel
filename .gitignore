@@ -1,0 +1,17 @@
+# --- 1. IGNORE EVERYTHING ---
+# This ignores every single file and folder in the project...
+*
+
+# --- 2. EXCEPTIONS (Whitelist) ---
+# ...Except for the 'Code' folder
+!Code/
+
+# ...And this .gitignore file (so you don't lose your rules)
+!.gitignore
+
+# --- 3. EXCLUSIONS INSIDE CODE ---
+# Even though we allowed 'Code/', we still want to ignore junk inside it.
+Code/__pycache__/
+Code/*.pyc
+Code/.DS_Store
+Code/.env
