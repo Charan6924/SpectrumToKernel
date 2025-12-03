@@ -1,6 +1,13 @@
 # --- 1. IGNORE EVERYTHING ---
 # This ignores every single file and folder in the project...
-*
+.idea/
+Data_Root/
+kenv/
+testA/
+testA_labels/
+testB/
+venv/
+.pth
 
 # --- 2. EXCEPTIONS (Whitelist) ---
 # ...Except for the 'Code' folder
