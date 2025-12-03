@@ -51,8 +51,8 @@ class KernelEstimator(nn.Module):
         nn.LeakyReLU()
     )
     
-    self.flatten = nn.Flatten() 
-    self.fc_head = nn.Linear(32 * 363, 15)  #15 points
+    self.flatten = nn.Flatten() # [1,32,363] -> [32*363]
+    self.fc_head = nn.Linear(32 * 363, 15)  # 15 points
     self.activation = nn.Softplus(beta = 2.0)
     self.spline_layer = FixedSplineLayer(num_output_points=363) 
 
