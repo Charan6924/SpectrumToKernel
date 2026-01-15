@@ -45,6 +45,7 @@ for epoch in range(40):
             psd_phantom, mtf_phantom_gt = next(phantom_iter)
             
         psd_phantom = psd_phantom.to(device)
+        mtf_phantom_pred = net(psd_phantom)
         mtf_phantom_gt = mtf_phantom_gt.to(device)
         psd_smooth = psd_smooth.to(device)
         psd_sharp = psd_sharp.to(device)
@@ -67,10 +68,10 @@ for epoch in range(40):
                     save_path = os.path.join(save_dir, f"epoch{epoch + 1}_sample{i + 1}.png")
                     save_image(imgs, save_path, nrow=2)
 
-                curve_smooth_np = mtf_smooth[0, 0].cpu().numpy() 
-                curve_sharp_np  = mtf_sharp[0, 0].cpu().numpy()
-                curve_ph_pred_np = mtf_phantom_pred[0, 0].cpu().numpy() 
-                curve_ph_gt_np = mtf_phantom_gt[0, 0].cpu().numpy()
+                curve_smooth_np = mtf_smooth[0, 0].detach().cpu().numpy() 
+                curve_sharp_np  = mtf_sharp[0, 0].detach().cpu().numpy()
+                curve_ph_pred_np = mtf_phantom_pred[0, 0].detach().cpu().numpy() 
+                curve_ph_gt_np = mtf_phantom_gt[0, 0].detach().cpu().numpy()
                 num_points = len(curve_smooth_np)
                 freq_axis = np.linspace(0, 0.5, num_points)
 
@@ -91,9 +92,7 @@ for epoch in range(40):
 
         # calculating loss and updating parameters
         recon_loss = l1(I_gen_sharp, I_sharp) + l1(I_gen_smooth, I_smooth)
-        recon_loss = recon_loss / 2.0 # 
-
-        mtf_phantom_pred = net(psd_phantom)
+        recon_loss = recon_loss / 2.0 
         loss_phantom = l1(mtf_phantom_pred, mtf_phantom_gt)
 
         total_loss = (recon_loss * alpha) + ((1-alpha) *loss_phantom)
