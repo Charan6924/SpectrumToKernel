@@ -36,20 +36,22 @@ for epoch in range(40):
     running_phantom_loss = 0.0
 
     for idx, (I_smooth, I_sharp, psd_smooth, psd_sharp) in enumerate(loader):
-        I_smooth = I_smooth.to(device)
-        I_sharp = I_sharp.to(device)
         try:
             psd_phantom, mtf_phantom_gt = next(phantom_iter)
         except StopIteration:
             phantom_iter = iter(loader_phantom)
             psd_phantom, mtf_phantom_gt = next(phantom_iter)
-            
+        
+        # moving to gpu 
+        I_smooth = I_smooth.to(device)
+        I_sharp = I_sharp.to(device)
         psd_phantom = psd_phantom.to(device)
-        mtf_phantom_pred = net(psd_phantom)
         mtf_phantom_gt = mtf_phantom_gt.to(device)
         psd_smooth = psd_smooth.to(device)
         psd_sharp = psd_sharp.to(device)
-
+        
+        # making predictions
+        mtf_phantom_pred = net(psd_phantom)
         mtf_smooth = net(psd_smooth) 
         mtf_sharp  = net(psd_sharp)
         I_gen_sharp, I_gen_smooth = generate_images(I_smooth, I_sharp, mtf_smooth, mtf_sharp)
