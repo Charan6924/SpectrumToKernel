@@ -612,3 +612,103 @@ Epoch [21/100] - VALIDATION
 2026-01-26 21:59:03,781 - INFO -   PyTorch vs SciPy max diff (smooth): 0.050596
   PyTorch vs SciPy max diff (sharp): 0.063350
 2026-01-26 21:59:03,781 - INFO -   PyTorch vs SciPy max diff (sharp): 0.063350
+Epoch [22/100] - TRAIN
+2026-01-26 22:00:30,787 - INFO - Epoch [22/100] - TRAIN
+  Total Loss: 0.0357
+2026-01-26 22:00:30,787 - INFO -   Total Loss: 0.0357
+  Smooth Loss: 0.0347 | Sharp Loss: 0.0367
+2026-01-26 22:00:30,787 - INFO -   Smooth Loss: 0.0347 | Sharp Loss: 0.0367
+  Grad Norm: 0.0296
+2026-01-26 22:00:30,787 - INFO -   Grad Norm: 0.0296
+Epoch [22/100] - VALIDATION
+2026-01-26 22:00:30,787 - INFO - Epoch [22/100] - VALIDATION
+  Total Loss: 0.0355
+2026-01-26 22:00:30,787 - INFO -   Total Loss: 0.0355
+  Smooth Loss: 0.0339 | Sharp Loss: 0.0370
+2026-01-26 22:00:30,787 - INFO -   Smooth Loss: 0.0339 | Sharp Loss: 0.0370
+--------------------------------------------------------------------------------
+2026-01-26 22:00:30,787 - INFO - --------------------------------------------------------------------------------
+  Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_22.pth
+2026-01-26 22:00:30,803 - INFO -   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_22.pth
+  *** NEW BEST MODEL *** Val Loss: 0.0355
+2026-01-26 22:00:30,822 - INFO -   *** NEW BEST MODEL *** Val Loss: 0.0355
+  MTF smooth range: [0.000000, 0.999997]
+2026-01-26 22:00:40,198 - INFO -   MTF smooth range: [0.000000, 0.999997]
+  MTF sharp range: [0.000000, 0.999997]
+2026-01-26 22:00:40,199 - INFO -   MTF sharp range: [0.000000, 0.999997]
+  PyTorch vs SciPy max diff (smooth): 0.042960
+2026-01-26 22:00:40,199 - INFO -   PyTorch vs SciPy max diff (smooth): 0.042960
+  PyTorch vs SciPy max diff (sharp): 0.044195
+2026-01-26 22:00:40,199 - INFO -   PyTorch vs SciPy max diff (sharp): 0.044195
+Epoch [23/100] - TRAIN
+2026-01-26 22:02:06,133 - INFO - Epoch [23/100] - TRAIN
+  Total Loss: 0.0357
+2026-01-26 22:02:06,133 - INFO -   Total Loss: 0.0357
+  Smooth Loss: 0.0346 | Sharp Loss: 0.0368
+2026-01-26 22:02:06,133 - INFO -   Smooth Loss: 0.0346 | Sharp Loss: 0.0368
+  Grad Norm: 0.0281
+2026-01-26 22:02:06,133 - INFO -   Grad Norm: 0.0281
+Epoch [23/100] - VALIDATION
+2026-01-26 22:02:06,133 - INFO - Epoch [23/100] - VALIDATION
+  Total Loss: 0.0355
+2026-01-26 22:02:06,136 - INFO -   Total Loss: 0.0355
+  Smooth Loss: 0.0339 | Sharp Loss: 0.0372
+2026-01-26 22:02:06,136 - INFO -   Smooth Loss: 0.0339 | Sharp Loss: 0.0372
+--------------------------------------------------------------------------------
+2026-01-26 22:02:06,136 - INFO - --------------------------------------------------------------------------------
+  Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_23.pth
+2026-01-26 22:02:06,145 - INFO -   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_23.pth
+  MTF smooth range: [0.000000, 0.999997]
+2026-01-26 22:02:15,504 - INFO -   MTF smooth range: [0.000000, 0.999997]
+  MTF sharp range: [0.000000, 0.999997]
+2026-01-26 22:02:15,504 - INFO -   MTF sharp range: [0.000000, 0.999997]
+  PyTorch vs SciPy max diff (smooth): 0.071203
+2026-01-26 22:02:15,504 - INFO -   PyTorch vs SciPy max diff (smooth): 0.071203
+  PyTorch vs SciPy max diff (sharp): 0.038823
+2026-01-26 22:02:15,506 - INFO -   PyTorch vs SciPy max diff (sharp): 0.038823
+Epoch [24/100] - TRAIN
+2026-01-26 22:03:42,898 - INFO - Epoch [24/100] - TRAIN
+  Total Loss: 0.0357
+2026-01-26 22:03:42,898 - INFO -   Total Loss: 0.0357
+  Smooth Loss: 0.0346 | Sharp Loss: 0.0367
+2026-01-26 22:03:42,898 - INFO -   Smooth Loss: 0.0346 | Sharp Loss: 0.0367
+  Grad Norm: 0.0263
+2026-01-26 22:03:42,898 - INFO -   Grad Norm: 0.0263
+Epoch [24/100] - VALIDATION
+2026-01-26 22:03:42,898 - INFO - Epoch [24/100] - VALIDATION
+  Total Loss: 0.0355
+2026-01-26 22:03:42,898 - INFO -   Total Loss: 0.0355
+  Smooth Loss: 0.0340 | Sharp Loss: 0.0370
+2026-01-26 22:03:42,898 - INFO -   Smooth Loss: 0.0340 | Sharp Loss: 0.0370
+--------------------------------------------------------------------------------
+2026-01-26 22:03:42,898 - INFO - --------------------------------------------------------------------------------
+  Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_24.pth
+2026-01-26 22:03:42,910 - INFO -   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_24.pth
+  *** NEW BEST MODEL *** Val Loss: 0.0355
+2026-01-26 22:03:42,927 - INFO -   *** NEW BEST MODEL *** Val Loss: 0.0355
+  MTF smooth range: [0.000000, 0.999997]
+2026-01-26 22:03:52,711 - INFO -   MTF smooth range: [0.000000, 0.999997]
+  MTF sharp range: [0.000000, 0.999997]
+2026-01-26 22:03:52,711 - INFO -   MTF sharp range: [0.000000, 0.999997]
+  PyTorch vs SciPy max diff (smooth): 0.057153
+2026-01-26 22:03:52,711 - INFO -   PyTorch vs SciPy max diff (smooth): 0.057153
+  PyTorch vs SciPy max diff (sharp): 0.052974
+2026-01-26 22:03:52,711 - INFO -   PyTorch vs SciPy max diff (sharp): 0.052974
+Epoch [25/100] - TRAIN
+2026-01-26 22:05:20,806 - INFO - Epoch [25/100] - TRAIN
+  Total Loss: 0.0356
+2026-01-26 22:05:20,806 - INFO -   Total Loss: 0.0356
+  Smooth Loss: 0.0345 | Sharp Loss: 0.0368
+2026-01-26 22:05:20,806 - INFO -   Smooth Loss: 0.0345 | Sharp Loss: 0.0368
+  Grad Norm: 0.0263
+2026-01-26 22:05:20,807 - INFO -   Grad Norm: 0.0263
+Epoch [25/100] - VALIDATION
+2026-01-26 22:05:20,807 - INFO - Epoch [25/100] - VALIDATION
+  Total Loss: 0.0355
+2026-01-26 22:05:20,807 - INFO -   Total Loss: 0.0355
+  Smooth Loss: 0.0337 | Sharp Loss: 0.0372
+2026-01-26 22:05:20,807 - INFO -   Smooth Loss: 0.0337 | Sharp Loss: 0.0372
+--------------------------------------------------------------------------------
+2026-01-26 22:05:20,807 - INFO - --------------------------------------------------------------------------------
+  Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_25.pth
+2026-01-26 22:05:20,816 - INFO -   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_25.pth
