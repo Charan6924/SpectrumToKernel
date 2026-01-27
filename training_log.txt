@@ -712,3 +712,39 @@ Epoch [25/100] - VALIDATION
 2026-01-26 22:05:20,807 - INFO - --------------------------------------------------------------------------------
   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_25.pth
 2026-01-26 22:05:20,816 - INFO -   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_25.pth
+  MTF smooth range: [0.000000, 0.999997]
+2026-01-26 22:05:30,753 - INFO -   MTF smooth range: [0.000000, 0.999997]
+  MTF sharp range: [0.000000, 0.999997]
+2026-01-26 22:05:30,754 - INFO -   MTF sharp range: [0.000000, 0.999997]
+  PyTorch vs SciPy max diff (smooth): 0.037947
+2026-01-26 22:05:30,754 - INFO -   PyTorch vs SciPy max diff (smooth): 0.037947
+  PyTorch vs SciPy max diff (sharp): 0.171597
+2026-01-26 22:05:30,754 - INFO -   PyTorch vs SciPy max diff (sharp): 0.171597
+Epoch [26/100] - TRAIN
+2026-01-26 22:07:03,043 - INFO - Epoch [26/100] - TRAIN
+  Total Loss: 0.0356
+2026-01-26 22:07:03,043 - INFO -   Total Loss: 0.0356
+  Smooth Loss: 0.0344 | Sharp Loss: 0.0368
+2026-01-26 22:07:03,044 - INFO -   Smooth Loss: 0.0344 | Sharp Loss: 0.0368
+  Grad Norm: 0.0250
+2026-01-26 22:07:03,044 - INFO -   Grad Norm: 0.0250
+Epoch [26/100] - VALIDATION
+2026-01-26 22:07:03,044 - INFO - Epoch [26/100] - VALIDATION
+  Total Loss: 0.0355
+2026-01-26 22:07:03,044 - INFO -   Total Loss: 0.0355
+  Smooth Loss: 0.0337 | Sharp Loss: 0.0372
+2026-01-26 22:07:03,044 - INFO -   Smooth Loss: 0.0337 | Sharp Loss: 0.0372
+--------------------------------------------------------------------------------
+2026-01-26 22:07:03,044 - INFO - --------------------------------------------------------------------------------
+  Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_26.pth
+2026-01-26 22:07:03,054 - INFO -   Checkpoint saved: checkpoints_generator_only\checkpoint_epoch_26.pth
+  *** NEW BEST MODEL *** Val Loss: 0.0355
+2026-01-26 22:07:03,136 - INFO -   *** NEW BEST MODEL *** Val Loss: 0.0355
+  MTF smooth range: [0.000000, 0.999997]
+2026-01-26 22:07:13,233 - INFO -   MTF smooth range: [0.000000, 0.999997]
+  MTF sharp range: [0.000000, 0.999997]
+2026-01-26 22:07:13,233 - INFO -   MTF sharp range: [0.000000, 0.999997]
+  PyTorch vs SciPy max diff (smooth): 0.043571
+2026-01-26 22:07:13,234 - INFO -   PyTorch vs SciPy max diff (smooth): 0.043571
+  PyTorch vs SciPy max diff (sharp): 0.187691
+2026-01-26 22:07:13,234 - INFO -   PyTorch vs SciPy max diff (sharp): 0.187691

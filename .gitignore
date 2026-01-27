@@ -12,3 +12,5 @@ reconstructed_scan.nii
 checkpoints_generator_only/
 
 checkpoints/
+spline_kernels_generator_only/
+genereted_images_spline_generator_only/
