@@ -260,6 +260,17 @@ def load_checkpoint(filepath, net, opt_G, scaler):
             'recon_loss_sharp': [],
             'G_grad_norm': [],
         }
+def load_checkpoint_for_inference(filepath, net):
+    """Load model weights for inference only."""
+    if os.path.exists(filepath):
+        checkpoint = torch.load(filepath, map_location='cpu')  # or 'cuda'
+        net.load_state_dict(checkpoint['net_state_dict'])
+        print(f"Loaded checkpoint from epoch {checkpoint['epoch']}")
+    else:
+        raise FileNotFoundError(f"Checkpoint not found: {filepath}")
+    
+    net.eval()  # Set to evaluation mode
+    return net
 
 def validate(net, val_loader, l1, device, epoch, save_dir):
     """
@@ -309,3 +320,39 @@ def validate(net, val_loader, l1, device, epoch, save_dir):
         val_metrics[key] /= len(val_loader)
     
     return val_metrics
+
+def radial_mtf_to_2d_otf_fixed(mtf_1d, image_shape, device):
+    """
+    Convert 1D radial MTF profile to 2D OTF in frequency space
+    
+    mtf_1d: [B, 1, L] - radial MTF profile (e.g., 363 points)
+    image_shape: (H, W) - target image dimensions
+    
+    Returns: [B, 1, H, W] - 2D OTF ready for FFT operations
+    """
+    B, C, L = mtf_1d.shape
+    H, W = image_shape
+    
+    # Create frequency space coordinate grid (non-shifted, as FFT expects)
+    y_freq = torch.fft.fftfreq(H, device=device).view(-1, 1)  # [-0.5, 0.5]
+    x_freq = torch.fft.fftfreq(W, device=device).view(1, -1)
+    
+    # Compute radial frequency
+    r_freq = torch.sqrt(y_freq**2 + x_freq**2)  # [H, W]
+    
+    # Maximum frequency is sqrt(0.5^2 + 0.5^2) = 0.707 at corners
+    # But let's normalize to the maximum radial frequency in the grid
+    r_max = r_freq.max()
+    r_norm = (r_freq / r_max).clamp(0, 1)  # [H, W] normalized to [0, 1]
+    
+    # Map normalized radius to MTF profile indices
+    indices = (r_norm * (L - 1)).long().clamp(0, L - 1)  # [H, W]
+    
+    # Build 2D OTF for each batch
+    otf_2d = torch.zeros(B, 1, H, W, device=device, dtype=torch.float32)
+    for b in range(B):
+        # Use MTF values, ensuring they're positive and <= 1
+        mtf_values = mtf_1d[b, 0].clamp(min=0, max=1)
+        otf_2d[b, 0] = mtf_values[indices]
+    
+    return otf_2d

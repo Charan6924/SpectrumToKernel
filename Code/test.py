@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
 
 #load and view nii volume
-img = nib.load(r"D:\Charan work file\KernelEstimator\Data_Root\trainB\0B14X41758_filter_E.nii")  #type: ignore
+img = nib.load(r"D:\Charan work file\KernelEstimator\Code\reconstructed_conservative.nii")  #type: ignore
 data = img.get_fdata() #type: ignore
 
 fig, ax = plt.subplots()

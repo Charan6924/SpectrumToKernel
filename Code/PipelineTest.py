@@ -188,13 +188,12 @@ if __name__ == "__main__":
     dataset, loader = diagnose_data(dataset_path, num_samples=10)
     
     # Uncomment to check model outputs (after training has started)
-    # print("\nRunning model output diagnostic...")
-    # from SplineEstimator import KernelEstimator
-    # net = KernelEstimator().to('cuda')
-    # # Load checkpoint if available
-    # # checkpoint = torch.load('checkpoints/latest_checkpoint.pth')
-    # # net.load_state_dict(checkpoint['net_state_dict'])
-    # diagnose_model_outputs(net, loader, device='cuda')
+    print("\nRunning model output diagnostic...")
+    from SplineEstimator import KernelEstimator
+    net = KernelEstimator().to('cuda')
+    checkpoint = torch.load(r'D:\Charan work file\KernelEstimator\checkpoints_generator_only\checkpoint_epoch_98.pth', map_location='cuda')
+    net.load_state_dict(checkpoint['net_state_dict'])
+    diagnose_model_outputs(net, loader, device='cuda')
     
     print("\n" + "="*80)
     print("Diagnostic complete!")
